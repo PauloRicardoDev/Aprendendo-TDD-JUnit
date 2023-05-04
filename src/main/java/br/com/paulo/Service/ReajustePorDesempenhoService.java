@@ -10,13 +10,13 @@ public class ReajustePorDesempenhoService {
     public BigDecimal reajuste(Desempenho desempenho, Funcionario funcionario) {
         BigDecimal valorFinal = BigDecimal.valueOf(0);
         if (desempenho.equals(Desempenho.REGULAR)){
-            valorFinal = funcionario.getSalario().add(new BigDecimal("0"));
+            valorFinal = funcionario.getSalario().add(Desempenho.REGULAR.percentualReajuste());
         }
         else if (desempenho.equals(Desempenho.BOM)){
-            valorFinal = funcionario.getSalario().add(funcionario.getSalario().multiply(new BigDecimal("0.10")));
+            valorFinal = funcionario.getSalario().add(funcionario.getSalario().multiply(Desempenho.BOM.percentualReajuste()));
         }
         else if(desempenho.equals(Desempenho.EXCELENTE)){
-            valorFinal = funcionario.getSalario().add(funcionario.getSalario().multiply(new BigDecimal("0.20")));
+            valorFinal = funcionario.getSalario().add(funcionario.getSalario().multiply(Desempenho.EXCELENTE.percentualReajuste()));
         }
         return valorFinal.setScale(2, RoundingMode.HALF_UP);
 
