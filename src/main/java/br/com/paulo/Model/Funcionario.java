@@ -2,11 +2,11 @@ package br.com.paulo.Model;
 import java.math.BigDecimal;
 
 public class Funcionario {
-
     private String nome;
     private String registroDoColaborador;
     private String cargo;
     private BigDecimal salario;
+
     public Funcionario() {}
     public Funcionario(String nome, String registroDoColaborador, String cargo, BigDecimal salario) {
         this.nome = nome;
@@ -14,6 +14,7 @@ public class Funcionario {
         this.cargo = cargo;
         this.salario = salario;
     }
+
     public String getNome() {
         return nome;
     }
