@@ -22,15 +22,15 @@ public class ReajustePorDesenpenhoServiceTest {
         ReajustePorDesempenhoService rpd = new ReajustePorDesempenhoService();
         BigDecimal valorReajustado = rpd.reajuste(Desempenho.BOM, new Funcionario
                 ("Teste", "rgc123456" , "Desenvolvedor Senior Java",
-                        new BigDecimal("7000.00")));
-        Assert.assertEquals(new BigDecimal("7700.00"), valorReajustado);
+                        new BigDecimal("6000.00")));
+        Assert.assertEquals(new BigDecimal("6600.00"), valorReajustado);
     }
     @Test
     public void reajustandoFuncionarioComDesempenhoEXELENTE(){
         ReajustePorDesempenhoService rpd = new ReajustePorDesempenhoService();
-        BigDecimal valorReajustado = rpd.reajuste(Desempenho.EXCELENTE, new Funcionario
+        BigDecimal valorReajustado = rpd.reajuste(Desempenho.EXECELENTE, new Funcionario
                 ("Teste", "rgc123456" , "Desenvolvedor Senior Java",
-                        new BigDecimal("7000.00")));
-        Assert.assertEquals(new BigDecimal("8400.00"), valorReajustado);
+                        new BigDecimal("8000.00")));
+        Assert.assertEquals(new BigDecimal("9600.00"), valorReajustado);
     }
 }
